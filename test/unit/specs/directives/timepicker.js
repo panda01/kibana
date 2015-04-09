@@ -2,7 +2,6 @@ define(function (require) {
   var angular = require('angular');
   var moment = require('moment');
   var _ = require('lodash');
-  var $ = require('jquery');
   var sinon = require('test_utils/auto_release_sinon');
 
 

@@ -1,9 +1,6 @@
 define(function (require) {
   var angular = require('angular');
-  var $ = require('jquery');
   var _ = require('lodash');
-  var sinon = require('test_utils/auto_release_sinon');
-  var searchResponse = require('fixtures/search_response');
 
   // Load the kibana app dependencies.
   require('services/private');

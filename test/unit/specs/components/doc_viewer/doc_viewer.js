@@ -1,6 +1,5 @@
 define(function (require) {
   var angular = require('angular');
-  var $ = require('jquery');
   var _ = require('lodash');
   var sinon = require('test_utils/auto_release_sinon');
   var hit = {
@@ -63,7 +62,6 @@ define(function (require) {
 
     describe('Table mode', function () {
       it('should have a row for each field', function () {
-        var rows = $elem.find('tr');
         expect($elem.find('tr').length).to.be(_.keys(flattened).length);
       });
 

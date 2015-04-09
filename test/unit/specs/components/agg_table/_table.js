@@ -80,7 +80,7 @@ define(function (require) {
         expect(bytesAsNum === 0 || bytesAsNum > 1000).to.be.ok();
       }
 
-      $rows.each(function (i) {
+      $rows.each(function () {
         // 6 cells in every row
         var $cells = $(this).find('td');
         expect($cells.size()).to.be(6);

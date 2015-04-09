@@ -1,4 +1,4 @@
-define(function (require) {
+define(function () {
   function stubbedLogstashFields() {
     var sourceData = [
       { name: 'bytes',              type: 'number',     indexed: true,  analyzed: true, sortable:  true,  filterable: true,   count: 10 },

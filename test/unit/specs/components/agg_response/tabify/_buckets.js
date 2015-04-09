@@ -3,7 +3,7 @@ define(function (require) {
     var Buckets;
 
     beforeEach(module('kibana'));
-    beforeEach(inject(function (Private, $injector) {
+    beforeEach(inject(function (Private) {
       Buckets = Private(require('components/agg_response/tabify/_buckets'));
     }));
 

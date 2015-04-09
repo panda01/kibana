@@ -141,7 +141,7 @@ define(function (require) {
 
         expect(siri).to.have.property('label', metric.col.label);
         expect(siri.values).to.have.length(rowCount);
-        siri.values.forEach(function (point, i) {
+        siri.values.forEach(function (point) {
           expect(point).to.have.property('x');
           expect(point.x).to.be.a('number');
 
@@ -218,7 +218,7 @@ define(function (require) {
       expect(chartData.series).to.be.an('array');
       // one series for each extension, and then one for each metric inside
       expect(chartData.series).to.have.length(extensions.length * metricCount);
-      chartData.series.forEach(function (siri, i) {
+      chartData.series.forEach(function (siri) {
         // figure out the metric used to create this series
         var metricAgg = siri.values[0].aggConfigResult.aggConfig;
         var metric = avg.agg === metricAgg ? avg : max;

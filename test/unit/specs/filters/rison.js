@@ -1,6 +1,4 @@
 define(function (require) {
-  var angular = require('angular');
-
   // Load the kibana app dependencies.
   require('angular-route');
 
@@ -10,7 +8,7 @@ define(function (require) {
   var rison;
   var risonDecode;
 
-  var init = function (expandable) {
+  var init = function () {
     // Load the application
     module('kibana');
 

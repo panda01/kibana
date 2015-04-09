@@ -3,9 +3,8 @@ define(function (require) {
     var _ = require('lodash');
 
     var fn;
-    var fields;
     beforeEach(module('kibana'));
-    beforeEach(inject(function (Private, $injector) {
+    beforeEach(inject(function (Private) {
       fn = Private(require('components/index_patterns/_cast_mapping_type'));
     }));
 

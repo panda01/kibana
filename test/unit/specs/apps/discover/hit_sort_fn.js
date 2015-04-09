@@ -31,7 +31,7 @@ define(function (require) {
       }
 
       hits.sort(createHitSortFn(dir))
-      .forEach(function (hit, i, hits) {
+      .forEach(function (hit, i) {
         var group = Math.floor(i / groupSize);
         expect(hit.sort).to.eql(sortOpts[group]);
       });

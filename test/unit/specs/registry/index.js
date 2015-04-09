@@ -1,10 +1,7 @@
 define(function (require) {
   describe('Registry', function () {
-    var _ = require('lodash');
-    var sinon = require('test_utils/auto_release_sinon');
     var registry = require('registry/_registry');
     var Private;
-    var IndexedArray;
 
     beforeEach(module('kibana'));
     beforeEach(inject(function ($injector) {
@@ -42,7 +39,6 @@ define(function (require) {
 
     describe('spec', function () {
       it('executes with the module list as "this", and can override it', function () {
-        var i = 0;
         var self;
 
         var reg = registry({
@@ -77,12 +73,11 @@ define(function (require) {
           }
         });
 
-        var modules = Private(reg);
+        Private(reg);
         expect(i).to.be(1);
       });
 
       it('executes with the module list as "this", and can override it', function () {
-        var i = 0;
         var self;
 
         var reg = registry({

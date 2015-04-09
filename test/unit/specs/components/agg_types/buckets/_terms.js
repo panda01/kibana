@@ -1,4 +1,4 @@
-define(function (require) {
+define(function () {
   return ['Terms Agg', function () {
     describe('order agg editor UI', function () {
       it('defaults to the first metric agg');

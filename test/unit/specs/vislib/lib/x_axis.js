@@ -127,7 +127,6 @@ define(function (require) {
     });
 
     describe('getScale, getDomain, getTimeDomain, getOrdinalDomain, and getRange Methods', function () {
-      var ordered;
       var timeScale;
       var timeDomain;
       var ordinalScale;
@@ -201,7 +200,6 @@ define(function (require) {
 
     describe('getXAxis Method', function () {
       var width;
-      var axis;
 
       beforeEach(function () {
         width = $('.x-axis-div').width();

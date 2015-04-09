@@ -1,7 +1,5 @@
 define(function (require) {
   return ['Histogram Agg', function () {
-    var _ = require('lodash');
-
     describe('ordered', function () {
       var histogram;
 

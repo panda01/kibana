@@ -3,7 +3,7 @@ define(function (require) {
     var TableGroup;
 
     beforeEach(module('kibana'));
-    beforeEach(inject(function (Private, $injector) {
+    beforeEach(inject(function (Private) {
       TableGroup = Private(require('components/agg_response/tabify/_table_group'));
     }));
 

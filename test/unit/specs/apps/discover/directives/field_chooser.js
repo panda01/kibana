@@ -169,7 +169,6 @@ define(function (require) {
       });
 
       it('should increase the field popularity when called', function (done) {
-        var counter = field.count;
         indexPattern.popularizeField = sinon.spy();
         $scope.details(field);
         expect(indexPattern.popularizeField.called).to.be(true);

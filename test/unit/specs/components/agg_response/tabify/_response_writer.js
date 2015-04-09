@@ -36,7 +36,7 @@ define(function (require) {
 
       it('gets the columns for the vis', function () {
         var vis = new Vis(indexPattern, { type: 'histogram', aggs: [] });
-        var writer = new ResponseWriter(vis);
+        new ResponseWriter(vis);
 
         expect(getColumns).to.have.property('callCount', 1);
         expect(getColumns.firstCall.args[0]).to.be(vis);

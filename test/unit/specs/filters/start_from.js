@@ -1,13 +1,11 @@
 define(function (require) {
-  var angular = require('angular');
-
   // Load the kibana app dependencies.
   require('angular-route');
   require('filters/start_from');
 
   var filter;
 
-  var init = function (expandable) {
+  var init = function () {
     // Load the application
     module('kibana');
 

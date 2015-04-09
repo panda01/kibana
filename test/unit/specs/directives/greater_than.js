@@ -1,5 +1,4 @@
 define(function (require) {
-  var angular = require('angular');
   require('directives/greater_than');
 
   describe('greater_than model validator directive', function () {

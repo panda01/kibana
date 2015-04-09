@@ -4,7 +4,6 @@ define(function (require) {
     var AggConfig;
     var indexPattern;
     var Vis;
-    var createFilter;
     var calculateInterval;
 
     beforeEach(module('kibana'));

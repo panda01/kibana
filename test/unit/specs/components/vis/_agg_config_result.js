@@ -1,5 +1,4 @@
 define(function (require) {
-  var _ = require('lodash');
   var AggConfigResult = require('components/vis/_agg_config_result');
 
   describe('AggConfigResult', function () {

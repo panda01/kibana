@@ -8,7 +8,6 @@ define(function (require) {
     var $rootScope;
     var $compile;
     var $scope;
-    var $elScope;
     var $orderBy;
     var defaultPerPage = 10;
 

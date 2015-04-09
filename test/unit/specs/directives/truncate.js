@@ -1,6 +1,5 @@
 define(function (require) {
   var angular = require('angular');
-  var $ = require('jquery');
 
   // Load the kibana app dependencies.
   require('angular-route');

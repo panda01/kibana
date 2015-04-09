@@ -1,5 +1,4 @@
 define(function (require) {
-  var moment = require('moment');
   describe('AggConfig Filters', function () {
     describe('Date range', function () {
       var AggConfig;

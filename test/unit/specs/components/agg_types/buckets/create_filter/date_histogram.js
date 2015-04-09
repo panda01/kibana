@@ -3,7 +3,7 @@ define(function (require) {
     describe('date_histogram', function () {
       var _ = require('lodash');
       var moment = require('moment');
-      var sinon = require('test_utils/auto_release_sinon');
+      require('test_utils/auto_release_sinon');
       var aggResp = require('fixtures/agg_resp/date_histogram');
 
       var vis;
@@ -12,18 +12,17 @@ define(function (require) {
       var filter;
       var bucketKey;
       var bucketStart;
-      var getIntervalStub;
       var intervalOptions;
 
       var init;
 
       beforeEach(module('kibana'));
-      beforeEach(inject(function (Private, $injector) {
+      beforeEach(inject(function (Private) {
         var Vis = Private(require('components/vis/vis'));
         var indexPattern = Private(require('fixtures/stubbed_logstash_index_pattern'));
         var createFilter = Private(require('components/agg_types/buckets/create_filter/date_histogram'));
-        var TimeBuckets = Private(require('components/time_buckets/time_buckets'));
         intervalOptions = Private(require('components/agg_types/buckets/_interval_options'));
+        Private(require('components/time_buckets/time_buckets'));
 
         init = function (interval, duration) {
           interval = interval || 'auto';

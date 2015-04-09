@@ -1,6 +1,5 @@
 define(function (require) {
   var angular = require('angular');
-  var $ = require('jquery');
   var _ = require('lodash');
   var sinon = require('test_utils/auto_release_sinon');
 
@@ -23,19 +22,6 @@ define(function (require) {
   var destroy = function () {
     $scope.$destroy();
     $parentScope.$destroy();
-  };
-
-  var details = {
-    'total': 379,
-    'exists': 379,
-    'missing': 0,
-    'buckets': [
-      {'value': 'info',     'count': 359, 'percent': '94.7'},
-      {'value': 'success',  'count': 135, 'percent': '35.6'},
-      {'value': 'security', 'count': 123, 'percent': '32.5'},
-      {'value': 'warning',  'count': 108, 'percent': '28.5'},
-      {'value': 'login',    'count': 17,  'percent': '4.5'}
-    ]
   };
 
   describe('discoverField', function () {

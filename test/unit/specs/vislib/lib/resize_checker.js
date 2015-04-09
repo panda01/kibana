@@ -2,7 +2,6 @@ define(function (require) {
   describe('Vislib Resize Checker', function () {
     var $ = require('jquery');
     var _ = require('lodash');
-    var Promise = require('bluebird');
 
     var sinon = require('test_utils/auto_release_sinon');
     require('test_utils/no_digest_promises').activateForSuite();

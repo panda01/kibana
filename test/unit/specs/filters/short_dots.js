@@ -1,7 +1,4 @@
 define(function (require) {
-  var angular = require('angular');
-  var _ = require('lodash');
-
   // Load the kibana app dependencies.
   require('angular-route');
   require('plugins/discover/index');
@@ -9,7 +6,7 @@ define(function (require) {
 
   var filter, config;
 
-  var init = function (expandable) {
+  var init = function () {
     // Load the application
     module('kibana');
 

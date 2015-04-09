@@ -1,11 +1,8 @@
 define(function (require) {
-  var moment = require('moment');
   describe('Query decorator', function () {
-
-    var _ = require('lodash');
     var config;
+    var fn;
 
-    var indexPattern, getComputedFields, fn;
     beforeEach(function () {
       module('kibana');
 

@@ -13,7 +13,6 @@ define(function (require) {
   var typeaheadName = 'unittest';
   var $parentScope;
   var $typeaheadScope, $elem;
-  var $typeaheadInputScope;
   var typeaheadCtrl, PersistedLog;
 
   var markup = '<div class="typeahead" kbn-typeahead="' + typeaheadName + '">' +

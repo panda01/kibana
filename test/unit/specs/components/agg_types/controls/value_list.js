@@ -1,7 +1,6 @@
 define(function (require) {
   describe('PercentList directive', function () {
     var $ = require('jquery');
-    var _ = require('lodash');
     var simulateKeys = require('test_utils/simulate_keys');
 
     require('components/agg_types/controls/_values_list');

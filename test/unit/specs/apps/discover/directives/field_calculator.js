@@ -1,8 +1,5 @@
 define(function (require) {
-  var angular = require('angular');
-  var $ = require('jquery');
   var _ = require('lodash');
-  var sinon = require('test_utils/auto_release_sinon');
   var fieldCalculator = require('plugins/discover/components/field_chooser/lib/field_calculator');
 
   // Load the kibana app dependencies.
@@ -10,7 +7,7 @@ define(function (require) {
 
   var indexPattern;
 
-  describe('fieldCalculator', function (done) {
+  describe('fieldCalculator', function () {
     beforeEach(module('kibana'));
     beforeEach(function () {
       inject(function (Private) {
@@ -60,7 +57,7 @@ define(function (require) {
         done();
       });
 
-      describe('grouped array terms', function (done) {
+      describe('grouped array terms', function () {
         beforeEach(function () {
           params.grouped = true;
           groups = fieldCalculator._groupValues(values, params);

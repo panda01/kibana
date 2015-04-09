@@ -1,5 +1,4 @@
 define(function (require) {
-  var mapMissing = require('components/filter_bar/lib/mapMissing');
   describe('Filter Bar Directive', function () {
     describe('mapMissing()', function () {
 

@@ -5,7 +5,7 @@ define(function (require) {
     var Table;
 
     beforeEach(module('kibana'));
-    beforeEach(inject(function (Private, $injector) {
+    beforeEach(inject(function (Private) {
       Table = Private(require('components/agg_response/tabify/_table'));
     }));
 

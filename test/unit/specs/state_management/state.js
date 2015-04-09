@@ -1,5 +1,4 @@
 define(function (require) {
-  var _ = require('lodash');
   var sinon = require('sinon/sinon');
   require('services/private');
 
@@ -78,7 +77,6 @@ define(function (require) {
         });
         state.test = 'foo';
         state.save();
-        var search = $location.search();
         $rootScope.$apply();
       });
     });

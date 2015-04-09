@@ -1,5 +1,4 @@
 define(function (require) {
-  var angular = require('angular');
   var _ = require('lodash');
   var longString = Array(200).join('_');
 

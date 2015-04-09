@@ -1,6 +1,5 @@
 define(function (require) {
   describe('Highlight', function () {
-    var angular = require('angular');
     require('components/highlight/highlight');
 
     var filter, tags;

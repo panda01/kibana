@@ -5,7 +5,7 @@ define(function (require) {
     var indexPattern;
 
     beforeEach(module('kibana'));
-    beforeEach(inject(function (Private, $injector) {
+    beforeEach(inject(function (Private) {
       getColumns = Private(require('components/agg_response/tabify/_get_columns'));
       Vis = Private(require('components/vis/vis'));
       indexPattern = Private(require('fixtures/stubbed_logstash_index_pattern'));
@@ -90,7 +90,6 @@ define(function (require) {
 
       expect(columns).to.have.length(12);
       for (var i = 0; i < columns.length; i += 3) {
-        var counts = { buckets: 0, metrics: 0 };
         columns.slice(i, i + 3).forEach(checkColumns);
       }
     });

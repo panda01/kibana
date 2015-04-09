@@ -1,6 +1,4 @@
 define(function (require) {
-  var _ = require('lodash');
-
   describe('AggConfig Filters', function () {
     describe('histogram', function () {
       var AggConfig;

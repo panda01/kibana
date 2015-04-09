@@ -13,7 +13,6 @@ define(function (require) {
   var seriesArr;
   var rowsArr;
   var uniqLabels;
-  var error;
 
   var seriesData = {
     'label': '',

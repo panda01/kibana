@@ -69,7 +69,6 @@ define(function (require) {
       });
 
       it('converts table groups into rows/columns wrappers for charts', function () {
-        var chart = { hits: 1, rows: [], columns: [] };
         var converter = sinon.stub().returns('chart');
         var esResp = { hits: { total: 1 } };
         var tables = [new Table(), new Table(), new Table(), new Table()];
@@ -83,7 +82,7 @@ define(function (require) {
           }
         };
 
-        var tabify = sinon.stub(aggResponse, 'tabify').returns({
+        sinon.stub(aggResponse, 'tabify').returns({
           tables: [
             {
               aggConfig: { params: { row: true } },

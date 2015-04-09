@@ -1,6 +1,5 @@
 define(function (require) {
   var angular = require('angular');
-  var _ = require('lodash');
   var $ = require('jquery');
 
   var slices = require('vislib_fixtures/mock_data/histogram/_slices');

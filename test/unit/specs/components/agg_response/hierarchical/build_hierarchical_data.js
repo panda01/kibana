@@ -28,7 +28,6 @@ define(function (require) {
       var vis, results;
 
       beforeEach(function () {
-        var id = 1;
         vis = new Vis(indexPattern, {
           type: 'pie',
           aggs: [

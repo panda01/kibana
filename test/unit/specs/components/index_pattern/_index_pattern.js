@@ -241,7 +241,7 @@ define(function (require) {
       });
 
       it('should decrement the poplarity count', function () {
-        indexPattern.fields.forEach(function (field, i) {
+        indexPattern.fields.forEach(function (field) {
           var oldCount = field.count;
           var incrementAmount = 4;
           var decrementAmount = -2;

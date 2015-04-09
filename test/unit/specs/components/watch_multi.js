@@ -33,7 +33,7 @@ define(function (require) {
     });
 
     it('only triggers a single watch when multiple values change', function () {
-      var stub = sinon.spy(function (a, b) {});
+      var stub = sinon.spy(function (a, b) { a || b; });
 
       $scope.$watchMulti([
         'one',
@@ -54,7 +54,7 @@ define(function (require) {
 
     it('passes an array of the current values as the first arg, and an array of the previous values as the second',
     function () {
-      var stub = sinon.spy(function (a, b) {});
+      var stub = sinon.spy(function (a, b) { a || b; });
 
       $scope.one = 'a';
       $scope.two = 'b';

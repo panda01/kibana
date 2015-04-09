@@ -1,6 +1,6 @@
-define(function (require) {
+define(function () {
   describe('markdown vis controller', function () {
-    var $scope, $el;
+    var $scope;
 
     beforeEach(module('kibana/markdown_vis'));
     beforeEach(inject(function ($rootScope, $controller) {

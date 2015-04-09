@@ -1,6 +1,5 @@
 define(function (require) {
   var angular = require('angular');
-  var $ = require('jquery');
 
   require('angular-route');
   require('plugins/discover/index');

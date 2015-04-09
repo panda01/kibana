@@ -6,7 +6,7 @@ define(function (require) {
 
       beforeEach(module('kibana'));
 
-      beforeEach(inject(function (Private, _$rootScope_, Promise) {
+      beforeEach(inject(function (Private) {
         indexPattern = Private(require('fixtures/stubbed_logstash_index_pattern'));
       }));
 

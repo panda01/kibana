@@ -4,12 +4,11 @@ define(function (require) {
     var fixtures = require('fixtures/fake_hierarchical_data');
 
     var Vis;
-    var Buckets;
     var indexPattern;
     var tabifyAggResponse;
 
     beforeEach(module('kibana'));
-    beforeEach(inject(function (Private, $injector) {
+    beforeEach(inject(function (Private) {
       tabifyAggResponse = Private(require('components/agg_response/tabify/tabify'));
       Vis = Private(require('components/vis/vis'));
       indexPattern = Private(require('fixtures/stubbed_logstash_index_pattern'));
@@ -247,7 +246,7 @@ define(function (require) {
           minimalColumns: false
         });
 
-        expectRootGroup(tabbed, function expectTable(table, splitKey) {
+        expectRootGroup(tabbed, function expectTable(table) {
           expectColumns(table, [src, os, avg]);
 
           table.rows.forEach(function (row) {

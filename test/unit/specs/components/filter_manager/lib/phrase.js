@@ -5,7 +5,7 @@ define(function (require) {
   describe('Filter Manager', function () {
     describe('Phrase filter builder', function () {
       beforeEach(module('kibana'));
-      beforeEach(inject(function (Private, _$rootScope_, Promise) {
+      beforeEach(inject(function (Private) {
         indexPattern = Private(require('fixtures/stubbed_logstash_index_pattern'));
         expected = _.cloneDeep(require('fixtures/filter_skeleton'));
       }));

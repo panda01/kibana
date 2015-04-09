@@ -86,7 +86,6 @@ define(function (require) {
       };
       var $el = $('<div>testing</div>');
       var createVisSpy;
-      var getParamsStub;
       var renderbot;
 
       beforeEach(function () {
@@ -115,8 +114,6 @@ define(function (require) {
     describe('render', function () {
       var vis = { type: mockVisType, isHierarchical: _.constant(false) };
       var $el = $('<div>testing</div>');
-      var renderbot;
-      var stubs = {};
 
       beforeEach(function () {
         sinon.stub(VislibRenderbot.prototype, '_getVislibParams', _.constant({}));

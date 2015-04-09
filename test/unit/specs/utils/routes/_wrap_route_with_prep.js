@@ -1,8 +1,5 @@
 define(function (require) {
   var RouteManager = require('routes').RouteManager;
-  var getRouteProvider = require('./_get_route_provider');
-  var wrapRouteWithPrep = require('utils/routes/_wrap_route_with_prep');
-  var Promise = require('bluebird');
   var _ = require('lodash');
   var stub = require('test_utils/auto_release_sinon').stub;
 
@@ -41,7 +38,7 @@ define(function (require) {
 
           var setup = Private(require('utils/routes/_setup'));
           stub(setup, 'routeSetupWork', function () {
-            return new Promise(function (resolve, reject) {
+            return new Promise(function (resolve) {
               setTimeout(function () {
                 setupComplete = true;
                 resolve();

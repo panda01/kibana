@@ -1,10 +1,8 @@
 define(function (require) {
   return ['get computed fields', function () {
-    var _ = require('lodash');
-
     var indexPattern, getComputedFields, fn;
     beforeEach(module('kibana'));
-    beforeEach(inject(function (Private, $injector) {
+    beforeEach(inject(function (Private) {
       indexPattern = Private(require('fixtures/stubbed_logstash_index_pattern'));
       getComputedFields = require('components/index_patterns/_get_computed_fields');
       indexPattern.getComputedFields = getComputedFields.bind(indexPattern);

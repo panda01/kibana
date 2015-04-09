@@ -47,7 +47,6 @@ define(function (require) {
 
       it('should be destroyed on $routeChangeStart', function () {
         var destroySpy = sinon.spy(appState, 'destroy');
-        var url = '/test/path';
 
         $rootScope.$emit('$routeChangeStart');
 

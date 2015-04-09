@@ -110,7 +110,7 @@ define(function (require) {
         });
 
         it('should returned grouped bars', function () {
-          vis.handler.charts.forEach(function (chart) {});
+          vis.handler.charts.forEach(function () {});
         });
       });
 

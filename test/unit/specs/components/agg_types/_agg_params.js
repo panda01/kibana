@@ -1,7 +1,5 @@
 define(function (require) {
   return ['AggParams class', function () {
-    var _ = require('lodash');
-
     var AggParams;
     var BaseAggParam;
     var FieldAggParam;

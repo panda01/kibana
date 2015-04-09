@@ -2,7 +2,6 @@ define(function (require) {
   var sinon = require('sinon/sinon');
 
   var storage;
-  var config;
   var PersistedLog;
 
   var historyName = 'testHistory';
@@ -48,7 +47,7 @@ define(function (require) {
 
     describe('internal functionality', function () {
       it('reads from storage', function () {
-        var log = new PersistedLog(historyName);
+        new PersistedLog(historyName);
 
         expect(storage.get.calledOnce).to.be(true);
         expect(storage.get.calledWith(historyName)).to.be(true);

@@ -2,7 +2,6 @@ define(function (require) {
   return ['Integration', function () {
     var $ = require('jquery');
     var _ = require('lodash');
-    var sinon = require('test_utils/auto_release_sinon');
 
     var $rootScope;
     var TableGroup;

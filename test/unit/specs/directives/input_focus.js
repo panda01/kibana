@@ -1,5 +1,4 @@
 define(function (require) {
-  var angular = require('angular');
   var $ = require('jquery');
   require('directives/input_focus');
 

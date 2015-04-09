@@ -1,7 +1,6 @@
 var _ = require('lodash');
 var root = require('requirefrom')('');
 var validateRequest = root('src/server/lib/validateRequest');
-var expect = require('expect.js');
 var config = root('src/server/config');
 
 describe('lib/isValid', function () {

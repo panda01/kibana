@@ -67,8 +67,6 @@ define(function (require) {
     it('should only change keys that actually changed', function () {
       var obj = { 'message': 'foo' };
       var target = { obj: obj, message: 'foo' };
-      var source = { obj: _.cloneDeep(obj), message: 'test' };
-      var results = diff(target, source);
       expect(target.obj).to.be(obj);
     });
 

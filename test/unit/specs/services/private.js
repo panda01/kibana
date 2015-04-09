@@ -1,4 +1,4 @@
-define(function (require) {
+define(function () {
   describe('Private module loader', function () {
 
     var Private;
@@ -31,17 +31,15 @@ define(function (require) {
       expect(function () {
         function Provider1() {
           var p3 = Private(Provider3);
-        }
-
-        function Provider2() {
-          var p3 = Private(Provider3);
+          p3;
         }
 
         function Provider3() {
           var p1 = Private(Provider3);
+          p1;
         }
 
-        var p1 = Private(Provider1);
+        Private(Provider1);
       }).to.throwException(/circular/i);
     });
 

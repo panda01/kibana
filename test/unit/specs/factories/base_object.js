@@ -1,9 +1,5 @@
 define(function (require) {
-  var angular = require('angular');
-  var _ = require('lodash');
-  var sinon = require('sinon/sinon');
   require('services/private');
-
 
   describe('Base Object', function () {
     var $rootScope;

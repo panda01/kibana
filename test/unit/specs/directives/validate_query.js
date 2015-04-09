@@ -11,7 +11,6 @@ define(function (require) {
   var Promise;
   var Private;
   var config;
-  var debounceDelay = 300;
   var $elemScope;
   var $elem;
 
@@ -110,8 +109,6 @@ define(function (require) {
     });
 
     describe('valid querystring', function () {
-      var mockValidateReturns;
-
       beforeEach(function () {
         init();
         mockValidateQuery.returns(validEsResponse());
@@ -126,8 +123,6 @@ define(function (require) {
     });
 
     describe('invalid querystring', function () {
-      var mockValidateReturns;
-
       beforeEach(function () {
         init();
         mockValidateQuery.returns(invalidEsResponse());

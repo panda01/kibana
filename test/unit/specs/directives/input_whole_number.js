@@ -1,5 +1,4 @@
 define(function (require) {
-  var angular = require('angular');
   require('directives/input_whole_number');
 
   describe('Whole number input directive', function () {

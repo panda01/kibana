@@ -1,6 +1,5 @@
 define(function (require) {
   return ['AggTableGroup Directive', function () {
-    var _ = require('lodash');
     var $ = require('jquery');
     var fixtures = require('fixtures/fake_hierarchical_data');
 

@@ -1,7 +1,5 @@
 define(function (require) {
   return ['Field', function () {
-    var _ = require('lodash');
-
     var BaseAggParam;
     var FieldAggParam;
 

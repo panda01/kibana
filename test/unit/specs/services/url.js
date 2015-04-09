@@ -2,7 +2,6 @@ define(function (require) {
   var sinon = require('test_utils/auto_release_sinon');
   var faker = require('faker');
   var _ = require('lodash');
-  var rison = require('utils/rison');
 
   // global vars, injected and mocked in init()
   var kbnUrl;

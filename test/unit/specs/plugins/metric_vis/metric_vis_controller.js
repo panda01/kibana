@@ -1,4 +1,4 @@
-define(function (require) {
+define(function () {
   describe('metric vis', function () {
     var $scope;
 

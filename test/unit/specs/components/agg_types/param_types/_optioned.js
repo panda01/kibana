@@ -1,7 +1,5 @@
 define(function (require) {
   return ['Optioned', function () {
-    var _ = require('lodash');
-
     var BaseAggParam;
     var OptionedAggParam;
 

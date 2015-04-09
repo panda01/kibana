@@ -12,7 +12,7 @@ define(function (require) {
 
   var $parentScope, $scope, $elem;
 
-  var init = function (text) {
+  var init = function () {
     // Load the application
     module('kibana');
 
