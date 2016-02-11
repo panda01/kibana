@@ -1,6 +1,6 @@
 <div class="content" chrome-context >
   <!-- TODO: These config dropdowns shouldn't be hard coded -->
-  <nav class="app-links-wrapper">
+  <nav class="app-links-wrapper" ng-class="{ hide: !chrome.getVisible() }">
     <li
       ng-if="!chrome.getBrand('logo')  && !chrome.getBrand('smallLogo')"
       aria-label="{{ chrome.getAppTitle() }} Logo"
@@ -42,7 +42,7 @@
     </div>
   </nav>
 
-  <div class="app-wrapper">
+  <div class="app-wrapper" ng-class="{ expanded: !chrome.getVisible() }">
     <div class="app-wrapper-panel">
       <kbn-notifications list="notifList"></kbn-notifications>
       <div class="application" ng-class="'tab-' + chrome.getActiveTabId('-none-') + ' ' + chrome.getApplicationClasses()" ng-view></div>
