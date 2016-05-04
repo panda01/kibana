@@ -6,6 +6,7 @@ import _ from 'lodash';
 import RegistryVisTypesProvider from 'ui/registry/vis_types';
 import uiModules from 'ui/modules';
 import visualizeTemplate from 'ui/visualize/visualize.html';
+import Chart from 'chart';
 uiModules
 .get('kibana/directive')
 .directive('visualize', function (Notifier, SavedVis, indexPatterns, Private, config, $timeout) {
@@ -16,6 +17,50 @@ uiModules
   let notify = new Notifier({
     location: 'Visualize'
   });
+
+  function esRespConvertorFactory($el) {
+    function decodeBucketData(buckets, aggregations) {
+      const chartDatasetConfigs = {};
+      const maxAggDepth = buckets.length - 1;
+      let currDepth = 0;
+      function decodeBucket(bucket, aggResp) {
+        const bucketId = bucket.id;
+        if (!chartDatasetConfigs[bucket.id]) {
+          chartDatasetConfigs[bucketId] = {
+            data: [],
+            labels: [],
+            backgroundColor: ['#000', '#333', '#666']
+          };
+        }
+        const config = chartDatasetConfigs[bucketId];
+        aggResp.buckets.forEach((bucket) => {
+          config.data.push(bucket.doc_count);
+          config.labels.push(bucket.key);
+          if (currDepth < maxAggDepth) {
+            const nextBucket = buckets[++currDepth];
+            decodeBucket(nextBucket, bucket[nextBucket.id]);
+            currDepth--;
+          }
+        });
+      }
+      decodeBucket(buckets[0], aggregations[buckets[0].id]);
+      return chartDatasetConfigs;
+    }
+    return function convertEsRespAndAggConfig(esResp, aggConfigs) {
+      const chartDatasetConfigs = [];
+      const aggConfigMap = aggConfigs.byId;
+      const decodedData = decodeBucketData(aggConfigs.bySchemaGroup.buckets, esResp.aggregations);
+      // debugger;
+
+      const myChart = new Chart($el, {
+        type: 'pie',
+        data: {
+          labels: [],
+          datasets: _.toArray(decodedData)
+        }
+      });
+    };
+  }
 
   return {
     restrict: 'E',
@@ -29,6 +74,7 @@ uiModules
     },
     template: visualizeTemplate,
     link: function ($scope, $el, attr) {
+      const esRespConvertor = esRespConvertorFactory($el.find('#canvas-chart'));
       let chart; // set in "vis" watcher
       let minVisChartHeight = 180;
 
@@ -148,6 +194,7 @@ uiModules
 
       $scope.$watch('esResp', prereq(function (resp, prevResp) {
         if (!resp) return;
+        esRespConvertor(resp, $scope.vis.aggs);
         $scope.renderbot.render(resp);
       }));
 
